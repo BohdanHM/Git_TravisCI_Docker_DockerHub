@@ -1,4 +1,5 @@
 TEST TASK
+
 Every push into GitHUB must  run trigger Travis CI which must run compilation of the docker image  and push it into the DockerHub.
 
 1. Create new GitHub repository.
