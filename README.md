@@ -19,11 +19,10 @@ Every push into GitHUB must  run trigger Travis CI which must run compilation of
      Click Authorize-CI and wait for sinhronization with github account.
 4. In our project create file .travis.yml with content:
     
+    
       sudo: 'required'
-
       services:
         - 'docker'
-
       script:
         - 'make test'
         - 'make image'
@@ -34,7 +33,8 @@ Every push into GitHUB must  run trigger Travis CI which must run compilation of
           fi
 	  
 5. Create file Makefile with content:
-          IMAGE := user_name/git_zabbix_docker
+          
+	  IMAGE := user_name/git_zabbix_docker
           VERSION:= latest
           test:
             	   true
@@ -43,6 +43,7 @@ Every push into GitHUB must  run trigger Travis CI which must run compilation of
           push-image:
 	         docker push ${IMAGE}
           .PHONY: image push-image test
+
 
 6. Add .travis.yml and Makefile into Git repository.
 7. Add Environment Variables into Travis CI project.
