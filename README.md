@@ -32,11 +32,6 @@ Every push into GitHUB must  run trigger Travis CI which must run compilation of
             docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
             make push-image ;
           fi
-      # To have `DOCKER_USERNAME` and `DOCKER_PASSWORD`
-      # use `travis env set DOCKER_USERNAME ...`
-      # use `travis env set DOCKER_PASSWORD ...`
-  
-
 	  
 5. Create file Makefile with content:
           IMAGE := user_name/git_zabbix_docker
