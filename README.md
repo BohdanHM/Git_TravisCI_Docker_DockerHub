@@ -17,34 +17,8 @@ Every push into GitHUB must  run trigger Travis CI which must run compilation of
        $ git push -u origin master
 3. Go to travis-ci.org and log in with a github account (Sign in Github). Authorize the application through OAuth. 
      Click Authorize-CI and wait for sinhronization with github account.
-4. In our project create file .travis.yml with content:
-    
-    
-      sudo: 'required'
-      services:
-        - 'docker'
-      script:
-        - 'make test'
-        - 'make image'
-      after_success:
-        - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
-            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
-            make push-image ;
-          fi
-	  
-5. Create file Makefile with content:
-          
-	  IMAGE := user_name/git_zabbix_docker
-          VERSION:= latest
-          test:
-            	   true
-          image:
-	         docker build -t ${IMAGE}:${VERSION} .
-          push-image:
-	         docker push ${IMAGE}
-          .PHONY: image push-image test
-
-
+4. In our project create file .travis.yml.
+5. Create file Makefile.
 6. Add .travis.yml and Makefile into Git repository.
 7. Add Environment Variables into Travis CI project.
 8. Create new DockerHub repository.
