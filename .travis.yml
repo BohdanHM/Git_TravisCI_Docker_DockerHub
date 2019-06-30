@@ -1,0 +1,16 @@
+sudo: 'required'
+
+services:
+  - 'docker'
+
+before_install:
+  - './.travis/main.sh'
+
+script:
+  - 'make image'
+
+# To have `DOCKER_USERNAME` and `DOCKER_PASSWORD`
+# use `travis env set DOCKER_USERNAME ...`
+# use `travis env set DOCKER_PASSWORD ...`
+after_success:
+  - sh .travis/deploy_dockerhub.sh
