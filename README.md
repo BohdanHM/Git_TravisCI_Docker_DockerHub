@@ -54,3 +54,4 @@ push-image:
 7. Add Environment Variables (DOCKER_USERNAME and DOCKER_PASSWORD) into Travis CI project.
 8. After each next commit new Docker image will be add into DockerHub repository.
 
+##[job_log TRAVIS CI](https://travis-ci.org/BohdanHM/Git_TravisCI_Docker_DockerHub)
