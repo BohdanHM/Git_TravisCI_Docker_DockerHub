@@ -1,6 +1,6 @@
 ### TEST TASK
 
-Every push into GitHUB must  run trigger Travis CI which must run compilation of the docker image  and push it into the DockerHub.
+Every push into GitHUB must  run trigger Travis CI which must run compilation of the docker image (zabbix server) and push it into the DockerHub.
 
 **How to do:**
 
